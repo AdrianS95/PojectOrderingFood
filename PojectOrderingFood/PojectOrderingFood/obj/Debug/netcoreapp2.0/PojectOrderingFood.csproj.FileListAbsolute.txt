@@ -1,0 +1,8 @@
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\bin\Debug\netcoreapp2.0\PojectOrderingFood.deps.json
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\bin\Debug\netcoreapp2.0\PojectOrderingFood.runtimeconfig.json
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\bin\Debug\netcoreapp2.0\PojectOrderingFood.runtimeconfig.dev.json
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\bin\Debug\netcoreapp2.0\PojectOrderingFood.dll
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\obj\Debug\netcoreapp2.0\PojectOrderingFood.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\obj\Debug\netcoreapp2.0\PojectOrderingFood.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\obj\Debug\netcoreapp2.0\PojectOrderingFood.AssemblyInfoInputs.cache
+C:\Users\Adrian\Documents\Repos\PojectOrderingFood\PojectOrderingFood\PojectOrderingFood\obj\Debug\netcoreapp2.0\PojectOrderingFood.AssemblyInfo.cs
