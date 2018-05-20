@@ -157,6 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BaseLogic\BaseLogic.cs" />
     <Compile Include="BaseLogic\IAplicationLogic.cs" />
+    <Compile Include="Controllers\APP1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\APP1\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
