@@ -1,0 +1,28 @@
+﻿@model IEnumerable<NVC_Food_APP.Models.Jedzenie>
+@using NVC_Food_APP.Logic
+<div id="SekcjaListaKategori">
+    <ul class="KursyTrzyKolumny MalaListaKategorii">
+        @foreach (var item in Model)
+        {
+            <li>
+                <article>
+                    <a class="dodajDoKoszykaLink" href="@Url.Action("DodajDoKoszyka","Koszyk", new { id = item.JedzenieID })">
+                        <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                    </a>
+                    @if (item.DanieDnia)
+                    {
+                        <div class="bestsellerFlag"></div>
+                    }
+                    <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly","Kursy", new { id = item.JedzenieID })">
+                        <img class="kurs" src="@Url.ObrazkiSciezka(item.PlikObrazek)" />
+                        <h1>
+                            @item.NazwaJedzenia
+                            @item.Cena
+
+                        </h1>
+                    </a>
+                </article>
+            </li>
+        }
+    </ul>
+</div>

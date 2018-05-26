@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NVC_Food_APP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace NVC_Food_APP.Controllers
 {
     public class JedzenieController : Controller
     {
+        private JedzenieDbContext db = new JedzenieDbContext();
         // GET: Jedzenie
         public ActionResult Index()
         {
@@ -22,5 +24,13 @@ namespace NVC_Food_APP.Controllers
         {
             return View();
         }
+        [ChildActionOnly]
+        public ActionResult MenuKategorie()
+        {
+            var kategorie = db.Kategorie.ToList();
+            return PartialView("_MenuKategorie", kategorie);
+        }
+
+
     }
 }
