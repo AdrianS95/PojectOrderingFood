@@ -1,0 +1,2 @@
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.csprojResolveAssemblyReference.cache
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.csproj.CoreCompileInputs.cache

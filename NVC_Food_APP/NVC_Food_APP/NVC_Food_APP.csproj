@@ -153,6 +153,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Jedzenie.cs" />
+    <Compile Include="Models\JedzenieDbContext.cs" />
     <Compile Include="Models\Kategoria.cs" />
     <Compile Include="Models\PozycjaZamowienia.cs" />
     <Compile Include="Models\Zamowienie.cs" />
