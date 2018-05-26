@@ -100,3 +100,6 @@ E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\bin
 E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.csproj.CopyComplete
 E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.dll
 E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.pdb
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.InitialCreate.resources
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.csproj.GenerateResource.cache
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init.resources

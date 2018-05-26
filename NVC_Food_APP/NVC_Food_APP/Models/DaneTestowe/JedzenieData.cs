@@ -4,26 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using NVC_Food_APP.Models;
-
+using NVC_Food_APP.Migrations;
+using System.Data.Entity.Migrations;
 
 namespace NVC_Food_APP.Models.DaneTestowe
-{
-    public class JedzenieData : DropCreateDatabaseAlways<JedzenieDbContext>
+{ 
+    public class JedzenieData : MigrateDatabaseToLatestVersion<JedzenieDbContext, Configuration>
     {
-        protected override void Seed(JedzenieDbContext context)
-        {
-            SeedJedzenieData(context);
-            base.Seed(context);
-        }
 
-        private void SeedJedzenieData(JedzenieDbContext context)
+        public static void SeedJedzenieData(JedzenieDbContext context)
         {
             var kategorie = new List<Kategoria>
             {
                 new Kategoria(){KategoriaID = 1, NazwaKategorii = "Pizza", NazwaPlikuIkony = "Pizza.png", Opiskategorii = "Mniam Pizza"},
                 new Kategoria(){KategoriaID = 2, NazwaKategorii = "Napoje", NazwaPlikuIkony = "Picie.png", Opiskategorii = "Mniam piciu"},
+                new Kategoria(){KategoriaID = 3, NazwaKategorii = "1 danie", NazwaPlikuIkony = "D1.png", Opiskategorii = "Mniam d1"},
+
             };
-            kategorie.ForEach(k => context.Kategorie.Add(k));
+            kategorie.ForEach(k => context.Kategorie.AddOrUpdate(k));
             context.SaveChanges();
 
             var jedzenie = new List<Jedzenie>
@@ -40,7 +38,7 @@ namespace NVC_Food_APP.Models.DaneTestowe
 
 
             };
-            jedzenie.ForEach(k => context.Jedzenie.Add(k));
+            jedzenie.ForEach(k => context.Jedzenie.AddOrUpdate(k));
             context.SaveChanges();
 
 
