@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NVC_Food_APP.Models.DaneTestowe;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -13,15 +14,15 @@ namespace NVC_Food_APP.Models
         {
 
         }
-
+        static JedzenieDbContext()
+        {
+            Database.SetInitializer<JedzenieDbContext>(new JedzenieData());
+        }
 
         public DbSet<Jedzenie> Jedzenie { get; set; }
         public DbSet<Kategoria> Kategorie { get; set; }
         public DbSet<Zamowienie> Zamowienia { get; set; }
         public DbSet<PozycjaZamowienia> PozycjaZamowienia { get; set; }
-
-
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

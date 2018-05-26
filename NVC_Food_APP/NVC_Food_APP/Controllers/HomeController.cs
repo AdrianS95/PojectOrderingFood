@@ -13,9 +13,9 @@ namespace NVC_Food_APP.Controllers
 
         public ActionResult Index()
         {
-            Kategoria kategoria = new Kategoria { NazwaKategorii = "aspn.net mvc", NazwaPlikuIkony = "aspNetMvc.png", Opiskategorii = "coś" };
-            db.Kategorie.Add(kategoria);
-            db.SaveChanges();
+            var listakategorii = db.Kategorie.ToList();
+
+
             return View();
         }
 
