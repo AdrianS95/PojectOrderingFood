@@ -1,4 +1,5 @@
 ﻿using NVC_Food_APP.Models;
+using NVC_Food_APP.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,18 @@ namespace NVC_Food_APP.Controllers
 
         public ActionResult Index()
         {
-            var listakategorii = db.Kategorie.ToList();
+            var kategorie = db.Kategorie.ToList();
+            var nowosci = db.Jedzenie.Where(x => x.Widoczny).OrderByDescending(x => x.DataDodania).Take(3).ToList();
+            var najlepsze = db.Jedzenie.Where(x => x.Widoczny && x.DanieDnia).OrderBy(x => Guid.NewGuid()).Take(3).ToList();
 
+            var vm = new HomeViewModel
+            {
+                Kategorie = kategorie,
+                Nowosc = nowosci,
+                Najlepsze = najlepsze,
+            };
 
-            return View();
+            return View(vm);
         }
 
         public ActionResult StronyStatyczne(string nazwa)

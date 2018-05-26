@@ -1,134 +1,74 @@
-﻿@{
+﻿@model NVC_Food_APP.ViewModel.HomeViewModel
+@using NVC_Food_APP.Logic
+@{
     ViewBag.Title = "Aplikacja do zamawiania jedzenia";
 }
-    <nav class="kategorieHorizontal">
-        <ul>
+<nav class="kategorieHorizontal">
+    <ul>
+        @foreach (var kategoria in Model.Kategorie)
+        {
             <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/Pizza.png); ">
-                    Pizza
+                <a href="@Url.Action("List", "Jedzenie", new {nazwaKategorii = kategoria.NazwaKategorii.ToLower()})"
+                   style="background-image: url(@Url.IkonyKategoriiSciezka(kategoria.NazwaPlikuIkony) ">
+                    @kategoria.NazwaKategorii
                 </a>
             </li>
-            <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/P1.png); ">
-                    Pierwsze danie
-                </a>
-            </li>
-            <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/P2.png); ">
-                    Drugie danie
-                </a>
-            </li>
-            <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/Desery.png); ">
-                    Desery
-                </a>
-            </li>
-            <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/Napoje.png); ">
-                    Napoje
-                </a>
-            </li>
-            <li>
-                <a href="link" style="background-image: url(../Content/Kategorie/Alkohol.png); ">
-                    Alkohole
-                </a>
-            </li>
-        </ul>
-        <a href="link">
-            <img id="baner" src="../Content/Images/baner.png" />
-        </a>
-    </nav>
+        }
 
-    <section>
-        <ul class="KursyTrzyKolumny duzaListaKursy">
+    </ul>
+    <a href="link">
+        <img id="baner" src="../Content/Images/baner.png" />
+    </a>
+</nav>
+
+<section>
+    <ul class="KursyTrzyKolumny duzaListaKursy">
+        @foreach (var nowe in Model.Nowosc)
+        {
             <li>
                 <article>
-                    <a class="dodajDoKoszykaLink" href="link">
+                    <a class="dodajDoKoszykaLink" href="@Url.Action("DodajDoKoszyka", "Koszyk", new { id= nowe.JedzenieID})">
                         <img src="../Content/Images/koszyk.png" />
                     </a>
-                    <a class="kursSzczegolyLink" href="link">
-                        <div class="bestsellerFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekcss.png" />
-                        <h1>
-                            Tutaj będzie tytuł
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="dodajDoKoszykaLink" href="link">
-                        <img src="../Content/Images/koszyk.png" />
-                    </a>
-                    <a class="kursSzczegolyLink" href="link">
-                        <div class="bestsellerFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekhtml.png" />
-                        <h1>
-                            Tutaj będzie tytuł
-                        </h1>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a class="dodajDoKoszykaLink" href="link">
-                        <img src="../Content/Images/koszyk.png" />
-                    </a>
-                    <a class="kursSzczegolyLink" href="link">
-                        <div class="bestsellerFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekjquery.png" />
-                        <h1>
-                            Tutaj będzie tytuł
-                        </h1>
-                    </a>
-                </article>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <ul class="KursyTrzyKolumny duzaListaKursy">
-            <li>
-                <article>
-                    <a class="dodajDoKoszykaLink" href="link">
-                        <img src="../Content/Images/koszyk.png" />
-                    </a>
-                    <a class="kursSzczegolyLink" href="link">
+                    <a class="kursSzczegolyLink" href="@Url.Action("Szczegoły", "Jedzenie", new { id = nowe.JedzenieID})">
+                        @*232*@
                         <div class="newFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekaspnet.png" />
+                        <img class="kurs" src="@Url.ObrazkiSciezka(nowe.PlikObrazek)" />
                         <h1>
-                            Tutaj będzie tytuł
+                            @nowe.NazwaJedzenia
+                            @*@nowe.Kategoria*@
+                            @nowe.Cena
                         </h1>
                     </a>
                 </article>
             </li>
+        }
+    </ul>
+</section>
+
+
+<section>
+    <ul class="KursyTrzyKolumny duzaListaKursy">
+        @foreach (var naj in Model.Najlepsze)
+        {
             <li>
                 <article>
-                    <a class="dodajDoKoszykaLink" href="link">
+                    <a class="dodajDoKoszykaLink" href="@Url.Action("DodajDoKoszyka", "Koszyk", new { id= naj.JedzenieID})">
                         <img src="../Content/Images/koszyk.png" />
                     </a>
-                    <a class="kursSzczegolyLink" href="link">
-                        <div class="newFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekcsharp.png" />
+                    <a class="kursSzczegolyLink" href="@Url.Action("Szczegoły", "Jedzenie", new { id = naj.JedzenieID})">
+                        <div class="bestsellerFlag"></div>
+                        <img class="kurs" src="@Url.ObrazkiSciezka(naj.PlikObrazek)" />
                         <h1>
-                            Tutaj będzie tytuł
+                            @naj.NazwaJedzenia
+                            @*@naj.Kategoria*@
+                            @naj.Cena
                         </h1>
                     </a>
                 </article>
             </li>
-            <li>
-                <article>
-                    <a class="dodajDoKoszykaLink" href="link">
-                        <img src="../Content/Images/koszyk.png" />
-                    </a>
-                    <a class="kursSzczegolyLink" href="link">
-                        <div class="newFlag"></div>
-                        <img class="kurs" src="../Content/Kursy/obrazekmvc.png" />
-                        <h1>
-                            Tutaj będzie tytuł
-                        </h1>
-                    </a>
-                </article>
-            </li>
-        </ul>
-    </section>
+        }
+    </ul>
+
+</section>
 
