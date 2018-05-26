@@ -19,6 +19,12 @@ namespace NVC_Food_APP.Controllers
             return View();
         }
 
+        public ActionResult StronyStatyczne(string nazwa)
+        {
+            return View(nazwa);
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

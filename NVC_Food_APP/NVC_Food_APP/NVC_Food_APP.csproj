@@ -282,6 +282,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Oaplikacji.cshtml" />
+    <Content Include="Views\Home\Pomoc.cshtml" />
+    <Content Include="Views\Home\Kontakt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
