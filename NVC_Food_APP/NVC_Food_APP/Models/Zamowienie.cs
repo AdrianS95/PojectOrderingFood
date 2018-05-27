@@ -36,7 +36,7 @@ namespace NVC_Food_APP.Models
         public StanZamowienia StanZamówienia { get; set; }
         public decimal WartoscZamówienia { get; set; }
 
-        List<PozycjaZamowienia> PozycjaZamowienia { get; set; }
+        public List<PozycjaZamowienia> PozycjaZamowienia { get; set; }
     }
     public enum StanZamowienia
     {

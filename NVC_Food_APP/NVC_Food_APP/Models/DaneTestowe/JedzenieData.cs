@@ -57,24 +57,25 @@ namespace NVC_Food_APP.Models.DaneTestowe
                 new Jedzenie() {JedzenieID = 23, KategoriaID = 4, Cena = 7, PlikObrazek = "Desery.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Kremówka truskawkowa", Widoczny = true, OpisJedzenia = "Mniam1" },
                 new Jedzenie() {JedzenieID = 24, KategoriaID = 4, Cena = 9, PlikObrazek = "Desery.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Sernik", Widoczny = true, OpisJedzenia = "Mniam1" },
 
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 5, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Pepsi 300ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 5, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Mirinda 300ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 3, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Woda", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 6, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Cherbata z cytryną", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 9, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = true, NazwaJedzenia = "Kawa z pianką", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 5, Cena = 6, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Mleko", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 25, KategoriaID = 5, Cena = 5, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Pepsi 300ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 26, KategoriaID = 5, Cena = 5, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Mirinda 300ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 27, KategoriaID = 5, Cena = 3, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Woda", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 28, KategoriaID = 5, Cena = 6, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Cherbata z cytryną", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 29, KategoriaID = 5, Cena = 9, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = true, NazwaJedzenia = "Kawa z pianką", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 30, KategoriaID = 5, Cena = 6, PlikObrazek = "Napoje.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Mleko", Widoczny = true, OpisJedzenia = "Mniam1" },
 
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 7, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Piwo Tyskie 500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 9, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Piwo Tyskie 750ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 29, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Wódka Finlandia 500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 35, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Wódka Finlandia 7500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 15, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Drink kombinacja x", Widoczny = true, OpisJedzenia = "Mniam1" },
-                new Jedzenie() {JedzenieID = 7, KategoriaID = 6, Cena = 12, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Drink kombinacja y", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 31, KategoriaID = 6, Cena = 7, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Piwo Tyskie 500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 32, KategoriaID = 6, Cena = 9, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Piwo Tyskie 750ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 33, KategoriaID = 6, Cena = 29, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Wódka Finlandia 500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 34, KategoriaID = 6, Cena = 35, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Wódka Finlandia 7500ML", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 35, KategoriaID = 6, Cena = 15, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Drink kombinacja x", Widoczny = true, OpisJedzenia = "Mniam1" },
+                new Jedzenie() {JedzenieID = 36, KategoriaID = 6, Cena = 12, PlikObrazek = "Alkohol.png", DataDodania = DateTime.Now, DanieDnia = false, NazwaJedzenia = "Drink kombinacja y", Widoczny = true, OpisJedzenia = "Mniam1" },
 
 
 
 
             };
+
             jedzenie.ForEach(k => context.Jedzenie.AddOrUpdate(k));
             context.SaveChanges();
 

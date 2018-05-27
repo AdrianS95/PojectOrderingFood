@@ -6,11 +6,11 @@
 <body>
     <header>
         <div style="overflow: hidden;">
-            <a id="koszykHeaderLink" href="link">
-                Koszyk (0)
+            <a id="koszykHeaderLink" href="~/Koszyk">
+                Koszyk (<span id="koszy-nag-ile-elm">@Html.Action("IleMamWKoszyku", "Koszyk")</span>)
                 <span></span>
             </a>
-            <a id="indexHeaderLogo" href="~/">
+            <a id="indexHeaderLogo" href="@Url.Action("Index","Home")">
                 <img src="@Url.Content("~/Content/Images/logo.png")" class="center" />
             </a>
         </div>
@@ -28,6 +28,8 @@
                 <li><a href="@Url.Action("Oaplikacji","Home")" style="">O aplikacji </a></li>
                 <li><a href="@Url.Action("Kontakt","Home")" style="">Kontakt</a></li>
                 <li><a href="@Url.Action("Pomoc","Home")" style="">Pomoc</a></li>
+                <li><a href="@Url.Action("Index","Home")" style="">Strona domowa</a></li>
+
             </ul>
         </nav>
 

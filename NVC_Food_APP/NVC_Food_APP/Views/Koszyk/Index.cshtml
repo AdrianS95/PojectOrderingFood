@@ -1,0 +1,93 @@
+﻿@model NVC_Food_APP.ViewModel.KoszykViewModel
+@using NVC_Food_APP.Logic
+
+@{
+    ViewBag.Title = "Koszyk";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="ListaKategoriZawartosc">
+    @Html.Action("MenuKategorie", "Jedzenie")
+    <div id="KategorieListPrawaSekcja">
+        <div id="Breadcrumb">
+            <img src="../Content/Images/dommaly.png" />
+        </div>
+        <section class="SekcjaKoszyk">
+            <div class="SekcjaHeader" style="margin-bottom: 0px;">
+                <h1>Twój koszyk</h1>
+            </div>
+
+
+            <table id="koszykTabela">
+
+                @foreach (var pozycjaKoszyka in Model.PozycjaKoszyka)
+                {
+                    <tr id="koszyk-wiersz-@pozycjaKoszyka.PozJedzenie.JedzenieID">
+                        <td>
+                            <a href="@Url.Action("Szczeguly", "Jedzenie", new { id = pozycjaKoszyka.PozJedzenie.JedzenieID})">
+                                <img src="@Url.Content("~/Content/Jedzenie/" + pozycjaKoszyka.PozJedzenie.PlikObrazek)" />
+                            </a>
+                        </td>
+                        <td><a href="@Url.Action("Szczeguly", "Jedzenie", new { id = pozycjaKoszyka.PozJedzenie.JedzenieID})">@pozycjaKoszyka.PozJedzenie.NazwaJedzenia</a></td>
+                        <td>Ilość: <span id="koszyk-ilosc-pozycji-@pozycjaKoszyka.PozJedzenie.JedzenieID">@pozycjaKoszyka.Ilosc</span></td>
+                        <td>@pozycjaKoszyka.Wartosc zł</td>
+                        <td><a class="usun" data-id="@pozycjaKoszyka.PozJedzenie.JedzenieID" href="#">Usuń</a></td>
+                    </tr>
+                }
+                <tr id="koszyk-empty-message" @if (Model.PozycjaKoszyka != null && Model.PozycjaKoszyka.Count > 0) { <text> class="hidden" </text> }>
+                    <td>Twój koszyk jest pusty. Może chcesz coś dodać do koszyka?</td>
+                </tr>
+
+            </table>
+
+
+            <div id="CenaCalkowita" style="">
+                Razem: <span id="calkowita-cena-wartosc">@Model.CenaCalkowita</span> zł
+            </div>
+            <div class="SekcjaPrzyciski">
+                <a class="PrzyciskLink" href="@Url.Content("~/")">Kontynułuj zakupy</a>
+                @if (Model.CenaCalkowita > 0)
+                {
+                    <a class="PrzyciskLink" id="koszyk-button-zaplac" href="@Url.Action("Zaplac","Koszyk")">Zapłać</a>
+                }
+            </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")
+    <script type="text/javascript">
+        $(function () {
+            $(".usun").click(function () {
+
+                var recordDoUsuniecia = $(this).attr("data-id");
+
+                if (recordDoUsuniecia != '') {
+                    $.post("/Koszyk/UsunZKoszyka", { "JedzenieID": recordDoUsuniecia },
+                        function (response) {
+                            if (response.IloscPozycjiUsuwanej == 0) {
+
+                                $('#koszyk-wiersz-' + response.IdPozycjiUsuwanej).fadeOut('slow', function () {
+                                    if (response.KoszykIloscPozycji == 0) {
+                                        $("#koszyk-empty-message").removeClass("hidden");
+                                    }
+                                });
+                            } else {
+                                $('#koszyk-ilosc-pozycji-' + response.IdPozycjiUsuwanej).text(response.IloscPozycjiUsuwanej);
+                            }
+
+                            if (response.KoszykIloscPozycji == 0) {
+                                $('#koszyk-button-zaplac').addClass('hidden');
+                                $('#CenaCalkowita').addClass('invisible');
+                            }
+                            $('#calkowita-cena-wartosc').text(response.KoszykCenaCalkowita);
+                            $('#koszyk-naglowek-ilosc-elementow').text(response.KoszykIloscPozycji);
+                        });
+                    return false;
+                }
+            });
+        });</script>
+}

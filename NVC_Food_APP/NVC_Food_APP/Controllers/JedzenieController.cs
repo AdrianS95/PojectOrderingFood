@@ -30,10 +30,13 @@ namespace NVC_Food_APP.Controllers
         [ChildActionOnly]
         public ActionResult MenuKategorie()
         {
+
             var kategorie = db.Kategorie.ToList();
             return PartialView("_MenuKategorie", kategorie);
-        }
 
+            
+        }
+        
 
     }
 }
