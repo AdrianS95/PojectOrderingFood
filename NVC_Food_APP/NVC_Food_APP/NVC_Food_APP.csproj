@@ -196,6 +196,8 @@
     <Content Include="Content\Images\new.png" />
     <Content Include="Content\Images\searchlogo.png" />
     <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\Jedzenie\Domyslny.png" />
+    <Content Include="Content\Kategorie\Domyslny.png" />
     <Content Include="Content\Kategorie\Pizza.png" />
     <Content Include="Content\Kategorie\P1.png" />
     <Content Include="Content\Kategorie\Desery.png" />
