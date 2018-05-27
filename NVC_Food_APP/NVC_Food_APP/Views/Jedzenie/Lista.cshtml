@@ -4,21 +4,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Lista</h2>
 
+  <div id="ListaKategoriZawartosc">
+      @Html.Action("MenuKategorie")
+        <div id="KategorieListPrawaSekcja">
+            <div id="Breadcrumb">
+                <img src="../Content/Images/dommaly.png" />
+                <a href="link">
+                    Start > ASP.NET
+                </a>
+            </div>
 
-<div id="ListaKategoriZawartosc">
-    @Html.Action("MenuKategorie")
-    <div id="KategorieListPrawaSekcja">
-        <div id="Breadcrumb">
-            <img src="../Content/Images/dommaly.png" />
-            <form id="search-form" method="get" data-ajax="true" data-ajax-target="#SekcjaListaKategori">
-                <input id="search-filter" type="search" name="searchQuery"
-                       data-autocomplete-source="@Url.Action("KursyPodpowiedzi")"
-                       placeholder="Wprowadź tekst, aby wyfiltrować..." />
-                <input type="submit" value="" />
-            </form>
+            <div id="SekcjaListaKategori">
+                @Html.Partial("_JedzenieList")
+            </div>
+
         </div>
-        @Html.Partial("_JedzenieList")
     </div>
-</div>

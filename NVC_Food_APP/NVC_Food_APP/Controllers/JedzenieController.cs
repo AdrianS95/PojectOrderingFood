@@ -17,7 +17,9 @@ namespace NVC_Food_APP.Controllers
         }
         public ActionResult Lista(string nazwaKategorii)
         {
-            return View();
+            var kategorie = db.Kategorie.Include("Jedzenie").Where(x => x.NazwaKategorii.ToUpper() == nazwaKategorii.ToUpper()).Single();
+            var jedzenie = kategorie.Jedzenie.ToList();
+            return View(jedzenie);
         }
 
         public ActionResult Szczeguly(string id)
