@@ -292,6 +292,7 @@
     <Content Include="Views\Jedzenie\Lista.cshtml" />
     <Content Include="Views\Jedzenie\_MenuKategorie.cshtml" />
     <Content Include="Views\Jedzenie\_JedzenieList.cshtml" />
+    <Content Include="Views\Jedzenie\Szczeguly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

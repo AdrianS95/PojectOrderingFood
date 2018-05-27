@@ -13,7 +13,7 @@
                     {
                         <div class="bestsellerFlag"></div>
                     }
-                    <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly","Kursy", new { id = item.JedzenieID })">
+                    <a class="kursSzczegolyLink" href="@Url.Action("Szczeguly", "Jedzenie", new { id = item.JedzenieID})">
                         <img class="kurs" src="@Url.ObrazkiSciezka(item.PlikObrazek)" />
                         <h1>
                             @item.NazwaJedzenia

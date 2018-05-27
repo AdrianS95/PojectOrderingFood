@@ -1,0 +1,42 @@
+﻿@model NVC_Food_APP.Models.Jedzenie
+@using NVC_Food_APP.Logic
+@{
+    ViewBag.Title = "Szczeguly";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="ListaKategoriZawartosc">
+    @Html.Action("MenuKAtegorie")
+    <div id="KategorieListPrawaSekcja">
+        <div id="Breadcrumb">
+            <img src=@Url.ObrazkiSciezka(Model.PlikObrazek) />
+            <a href="link">
+                Start > ASP.NET
+            </a>
+        </div>
+        <section id="SekcjaKurs">
+            <div id="KursLewa">
+                <img src="../Content/Kursy/obrazekmvc.png" />
+            </div>
+            <div id="KursPrawa">
+                <div id="KursNazwa">
+                    <h1>
+                        @Model.NazwaJedzenia
+                    </h1>
+                    <h2>
+                        @Model.Kategoria
+                    </h2>
+                </div>
+                <div id="KursCena">
+                    <div>
+                        @Model.Cena zł
+                    </div>
+                    <a href="@Url.Action("DodajDoKoszyka", "Koszyk", new { id= Model.JedzenieID})"></a>
+                </div>
+                <div id="KursOpis">
+                    @Model.OpisJedzenia
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

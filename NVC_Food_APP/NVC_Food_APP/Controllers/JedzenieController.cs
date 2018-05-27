@@ -22,9 +22,10 @@ namespace NVC_Food_APP.Controllers
             return View(jedzenie);
         }
 
-        public ActionResult Szczeguly(string id)
+        public ActionResult Szczeguly(int id)
         {
-            return View();
+            var jedzenie = db.Jedzenie.Find(id);
+            return View(jedzenie);
         }
         [ChildActionOnly]
         public ActionResult MenuKategorie()
