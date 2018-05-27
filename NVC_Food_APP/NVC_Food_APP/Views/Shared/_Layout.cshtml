@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
@@ -11,7 +10,7 @@
                 Koszyk (0)
                 <span></span>
             </a>
-            <a id="indexHeaderLogo" href="link">
+            <a id="indexHeaderLogo" href="~/">
                 <img src="@Url.Content("~/Content/Images/logo.png")" class="center" />
             </a>
         </div>
@@ -26,9 +25,9 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="@Url.Action("StronyStatyczne","Home", new { nazwa = "Oaplikacji" })" style="">O aplikacji </a></li>
-                <li><a href="@Url.Action("StronyStatyczne","Home", new { nazwa = "Kontakt" })" style="">Kontakt</a></li>
-                <li><a href="@Url.Action("StronyStatyczne","Home", new { nazwa = "Pomoc" })" style="">Pomoc</a></li>
+                <li><a href="@Url.Action("Oaplikacji","Home")" style="">O aplikacji </a></li>
+                <li><a href="@Url.Action("Kontakt","Home")" style="">Kontakt</a></li>
+                <li><a href="@Url.Action("Pomoc","Home")" style="">Pomoc</a></li>
             </ul>
         </nav>
 
@@ -36,4 +35,3 @@
     </footer>
     @RenderSection("Scripts", required : false)
 </body>
-</html>

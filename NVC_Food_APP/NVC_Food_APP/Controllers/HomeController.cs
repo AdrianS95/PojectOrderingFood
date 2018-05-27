@@ -28,11 +28,20 @@ namespace NVC_Food_APP.Controllers
             return View(vm);
         }
 
-        public ActionResult StronyStatyczne(string nazwa)
+        public ActionResult Oaplikacji()
         {
-            return View(nazwa);
+            return View();
         }
 
+        public ActionResult Kontakt()
+        {
+            return View();
+        }
+
+        public ActionResult Pomoc()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {
