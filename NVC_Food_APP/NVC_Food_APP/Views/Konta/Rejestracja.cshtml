@@ -1,0 +1,100 @@
+﻿@model NVC_Food_APP.ViewModel.RejestracjaViewModel
+@{
+    Layout = null;
+}
+<center>
+    <div class="form-horizontal">
+        @using (Html.BeginForm("Rejestracja", "Konta"))
+        {
+            @Html.AntiForgeryToken()
+
+            <div id="login-error">
+                @Html.ValidationMessage("loginerror", "")
+                @Html.ValidationSummary()
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(o => o.Email, "E-mail:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(o => o.Email)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.Password, "Hasło:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.Password)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.ConfirmPassword, "Potwierdź hasło:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.ConfirmPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.Imie, "Imię:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.Imie)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Imie, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.Nazwisko, "Nazwisko:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.Nazwisko)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Nazwisko, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.Adres, "Ulica:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.Adres)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Adres, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.Miasto, "Miasto:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.Miasto)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Miasto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(o => o.KodPocztowy, "Kod pocztowy:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(o => o.KodPocztowy)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.KodPocztowy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Zarejestruj" class="submitLink" />
+                </div>
+            </div>
+        }
+    </div>
+</center>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -31,7 +31,7 @@
                         <td><a href="@Url.Action("Szczeguly", "Jedzenie", new { id = pozycjaKoszyka.PozJedzenie.JedzenieID})">@pozycjaKoszyka.PozJedzenie.NazwaJedzenia</a></td>
                         <td>Ilość: <span id="koszyk-ilosc-pozycji-@pozycjaKoszyka.PozJedzenie.JedzenieID">@pozycjaKoszyka.Ilosc</span></td>
                         <td>@pozycjaKoszyka.Wartosc zł</td>
-                        <td><a class="usun" data-id="@pozycjaKoszyka.PozJedzenie.JedzenieID" href="#">Usuń</a></td>
+                        <td><a class="usunKurs" data-id="@pozycjaKoszyka.PozJedzenie.JedzenieID" href="#">Usuń</a></td>
                     </tr>
                 }
                 <tr id="koszyk-empty-message" @if (Model.PozycjaKoszyka != null && Model.PozycjaKoszyka.Count > 0) { <text> class="hidden" </text> }>
@@ -57,16 +57,15 @@
 
 @section Scripts{
 
-
     @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJqueryUI")
     <script type="text/javascript">
         $(function () {
-            $(".usun").click(function () {
+            $(".usunKurs").click(function () {
 
                 var recordDoUsuniecia = $(this).attr("data-id");
 
                 if (recordDoUsuniecia != '') {
-                    $.post("/Koszyk/UsunZKoszyka", { "JedzenieID": recordDoUsuniecia },
+                    $.post("/Koszyk/UsunZKoszyka", { "kursId": recordDoUsuniecia },
                         function (response) {
                             if (response.IloscPozycjiUsuwanej == 0) {
 
@@ -89,5 +88,6 @@
                     return false;
                 }
             });
-        });</script>
+        });
+    </script>
 }
