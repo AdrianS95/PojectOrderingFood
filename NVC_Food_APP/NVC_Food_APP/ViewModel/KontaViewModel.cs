@@ -16,6 +16,9 @@ namespace NVC_Food_APP.ViewModel
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
         public string Password { get; set; }
+
+        [Display(Name = "Zapamiętaj")]
+        public bool RememberMe { get; set; }
     }
     public class RejestracjaViewModel
     {

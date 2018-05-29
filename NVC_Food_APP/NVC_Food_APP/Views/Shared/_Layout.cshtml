@@ -10,6 +10,8 @@
                 Koszyk (<span id="koszy-nag-ile-elm">@Html.Action("IleMamWKoszyku", "Koszyk")</span>)
                 <span></span>
             </a>
+            @Html.Partial("_Login")
+
             <a id="indexHeaderLogo" href="@Url.Action("Index","Home")">
                 <img src="@Url.Content("~/Content/Images/logo.png")" class="center" />
             </a>

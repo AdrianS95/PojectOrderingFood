@@ -1,14 +1,16 @@
-﻿using NVC_Food_APP.Models.DaneTestowe;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using NVC_Food_APP.Models.DaneTestowe;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
+using static NVC_Food_APP.Models.IdentityModels;
 
 namespace NVC_Food_APP.Models
 {
-    public class JedzenieDbContext : DbContext
+    public class JedzenieDbContext : IdentityDbContext<ApplicationUser>
     {
         public JedzenieDbContext() : base("APP_Foof_DataBase")
         {
@@ -17,6 +19,11 @@ namespace NVC_Food_APP.Models
         static JedzenieDbContext()
         {
             Database.SetInitializer<JedzenieDbContext>(new JedzenieData());
+        }
+
+        public static JedzenieDbContext Create()
+        {
+            return new JedzenieDbContext();
         }
 
         public DbSet<Jedzenie> Jedzenie { get; set; }
