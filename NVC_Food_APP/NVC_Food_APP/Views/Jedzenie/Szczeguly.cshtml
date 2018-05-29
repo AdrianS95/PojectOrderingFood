@@ -9,11 +9,11 @@
     @Html.Action("MenuKAtegorie")
     <div id="KategorieListPrawaSekcja">
         <div id="Breadcrumb">
-            <img height="350" width="350" src=@Url.ObrazkiSciezka(Model.PlikObrazek)  />
+            <img height="300" width="300" src=@Url.ObrazkiSciezka(Model.PlikObrazek)  />
         </div>
         <section id="SekcjaKurs">
             <div id="KursLewa">
-                <img src="../Content/Kursy/obrazekmvc.png" />
+                <img src="" />
             </div>
             <div id="KursPrawa">
                 <div id="KursNazwa">
@@ -31,6 +31,7 @@
                     <a href="@Url.Action("DodajDoKoszyka", "Koszyk", new { id= Model.JedzenieID})"></a>
                 </div>
                 <div id="KursOpis">
+                    
                     @Model.OpisJedzenia
                 </div>
             </div>

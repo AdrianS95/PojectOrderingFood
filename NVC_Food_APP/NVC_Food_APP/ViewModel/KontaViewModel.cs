@@ -37,22 +37,22 @@ namespace NVC_Food_APP.ViewModel
         [Compare("Password", ErrorMessage = "Hasło i potwierdzenie hasła nie pasują do siebie.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Pole wymagane")]
-        public string Imie { get; set; }
+        //[Required(ErrorMessage = "Pole wymagane")]
+        //public string Imie { get; set; }
 
-        [Required(ErrorMessage = "Pole wymagane")]
-        public string Nazwisko { get; set; }
+        //[Required(ErrorMessage = "Pole wymagane")]
+        //public string Nazwisko { get; set; }
 
-        [Required(ErrorMessage = "Pole wymagane")]
-        public string Adres { get; set; }
-
-
-        [Required(ErrorMessage = "Pole wymagane")]
-        public string Miasto { get; set; }
+        //[Required(ErrorMessage = "Pole wymagane")]
+        //public string Adres { get; set; }
 
 
-        [Required(ErrorMessage = "Pole wymagane")]
-        public string KodPocztowy { get; set; }
+        //[Required(ErrorMessage = "Pole wymagane")]
+        //public string Miasto { get; set; }
+
+
+        //[Required(ErrorMessage = "Pole wymagane")]
+        //public string KodPocztowy { get; set; }
 
 
 

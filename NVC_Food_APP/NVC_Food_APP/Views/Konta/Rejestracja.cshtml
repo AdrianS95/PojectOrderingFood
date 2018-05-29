@@ -3,101 +3,89 @@
     Layout = null;
 }
 
-    <center>
-        <div class="form-horizontal">
-            @using (Html.BeginForm("Rejestracja", "Konta"))
-            {
-                @Html.AntiForgeryToken()
 
-                <div id="login-error">
-                    @Html.ValidationMessage("loginerror", "")
-                    @Html.ValidationSummary()
-                </div>
+<center>
+    <div class="form-horizontal">
+        @using (Html.BeginForm("Rejestracja", "Konta", new { @class = "form-horizontal", role = "form" }))
+        {
 
 
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Email, "E-mail:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(o => o.Email)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Password, "Hasło:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.Password)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.ConfirmPassword, "Potwierdź hasło:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.ConfirmPassword)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.ConfirmPassword, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Imie, "Imię:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.Imie)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Imie, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Nazwisko, "Nazwisko:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.Nazwisko)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Nazwisko, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Adres, "Ulica:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.Adres)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Adres, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.Miasto, "Miasto:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.Miasto)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.Miasto, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(o => o.KodPocztowy, "Kod pocztowy:", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(o => o.KodPocztowy)
-                        <div class="login-validation-message">
-                            @Html.ValidationMessageFor(o => o.KodPocztowy, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Zarejestruj" class="submitLink" />
-                    </div>
-                </div>
-            }
-        </div>
-    </center>
+            @Html.AntiForgeryToken()
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+            <div id="login-error">
+                @Html.ValidationMessage("loginerror", "")
+                @Html.ValidationSummary()
+            </div>
+
+            <h4>Utwórz nowe konto.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            @*@Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Imie, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Imie, new { @class = "form-control" })
+                </div>
+            </div>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Nazwisko, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Nazwisko, new { @class = "form-control" })
+                </div>
+            </div>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Adres, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Adres, new { @class = "form-control" })
+                </div>
+            </div>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Miasto, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Miasto, new { @class = "form-control" })
+                </div>
+            </div>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.KodPocztowy, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.KodPocztowy, new { @class = "form-control" })
+                </div>
+            </div>*@
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Zarejestruj" class="submitLink" />
+                </div>
+            </div>
+        }
+    </div>
+</center>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
 
 
