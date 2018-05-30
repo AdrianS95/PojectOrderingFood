@@ -9,22 +9,17 @@ using System.Web;
 
 namespace NVC_Food_APP.Models
 {
-    public class IdentityModels
+    public class ApplicationUser : IdentityUser
     {
-        public class ApplicationUser : IdentityUser
+        public virtual ICollection<Zamowienie> Zamowienia { get; set; }
+
+        public DaneUzytkownika DaneUzytkownika { get; set; }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            public virtual ICollection<Zamowienie> Zamówienia { get; set; }
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
 
-            public DaneUrzytkownika daneUrzytkownika { get; set; }
-
-
-            public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-            {
-                // Element authenticationType musi pasować do elementu zdefiniowanego w elemencie CookieAuthenticationOptions.AuthenticationType
-                var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-                // Dodaj tutaj niestandardowe oświadczenia użytkownika
-                return userIdentity;
-            }
+            return userIdentity;
         }
     }
 }

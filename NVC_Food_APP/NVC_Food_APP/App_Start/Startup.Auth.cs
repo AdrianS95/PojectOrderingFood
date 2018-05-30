@@ -4,14 +4,13 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using NVC_Food_APP.App_Start;
-
 using NVC_Food_APP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using static NVC_Food_APP.App_Start.IdentityConfig;
-using static NVC_Food_APP.Models.IdentityModels;
+
 
 namespace NVC_Food_APP
 {

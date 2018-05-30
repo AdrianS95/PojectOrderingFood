@@ -6,7 +6,6 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
-using static NVC_Food_APP.Models.IdentityModels;
 
 namespace NVC_Food_APP.Models
 {

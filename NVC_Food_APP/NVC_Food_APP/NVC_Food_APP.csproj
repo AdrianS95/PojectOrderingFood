@@ -177,10 +177,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JedzenieController.cs" />
-    <Compile Include="Controllers\KontaController.cs" />
     <Compile Include="Controllers\KoszykController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,20 +206,33 @@
     <Compile Include="Migrations\201805290635187_p3.Designer.cs">
       <DependentUpon>201805290635187_p3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805302017104_init3.cs" />
+    <Compile Include="Migrations\201805302017104_init3.Designer.cs">
+      <DependentUpon>201805302017104_init3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805302025286_init4.cs" />
+    <Compile Include="Migrations\201805302025286_init4.Designer.cs">
+      <DependentUpon>201805302025286_init4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805302054284_gfgdgfg.cs" />
+    <Compile Include="Migrations\201805302054284_gfgdgfg.Designer.cs">
+      <DependentUpon>201805302054284_gfgdgfg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DaneTestowe\JedzenieData.cs" />
-    <Compile Include="Models\DaneUrzytkownika.cs" />
+    <Compile Include="Models\DaneUzytkownika.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jedzenie.cs" />
     <Compile Include="Models\JedzenieDbContext.cs" />
     <Compile Include="Models\Kategoria.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PozycjaKoszyka.cs" />
     <Compile Include="Models\PozycjaZamowienia.cs" />
     <Compile Include="Models\Zamowienie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
-    <Compile Include="ViewModel\KontaViewModel.cs" />
     <Compile Include="ViewModel\KoszykUsuwanieViewModel.cs" />
     <Compile Include="ViewModel\KoszykViewModel.cs" />
   </ItemGroup>
@@ -342,9 +356,9 @@
     <Content Include="Views\Jedzenie\_JedzenieList.cshtml" />
     <Content Include="Views\Jedzenie\Szczeguly.cshtml" />
     <Content Include="Views\Koszyk\Index.cshtml" />
-    <Content Include="Views\Konta\Logowanie.cshtml" />
-    <Content Include="Views\Konta\Rejestracja.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -374,6 +388,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805290635187_p3.resx">
       <DependentUpon>201805290635187_p3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805302017104_init3.resx">
+      <DependentUpon>201805302017104_init3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805302025286_init4.resx">
+      <DependentUpon>201805302025286_init4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805302054284_gfgdgfg.resx">
+      <DependentUpon>201805302054284_gfgdgfg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
-using static NVC_Food_APP.Models.IdentityModels;
+
 
 namespace NVC_Food_APP.App_Start
 {
