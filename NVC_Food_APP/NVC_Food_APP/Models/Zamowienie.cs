@@ -9,6 +9,11 @@ namespace NVC_Food_APP.Models
     public class Zamowienie
     {
         public int ZamowienieID { get; set; }
+
+        public string UserId { get; set; }
+
+        public virtual ApplicationUser User { get; set;}
+
         [Required(ErrorMessage = "Wprowadź imię")]
         [StringLength(40)]
         public string Imie { get; set; }
@@ -17,7 +22,7 @@ namespace NVC_Food_APP.Models
         public string Nazwisko  { get; set; }
         [Required(ErrorMessage = "Wprowadź ulice")]
         [StringLength(40)]
-        public string Ulica { get; set; }
+        public string Adres { get; set; }
         [Required(ErrorMessage = "Wprowadź miasto")]
         [StringLength(40)]
         public string  Miasto { get; set; }
@@ -30,7 +35,6 @@ namespace NVC_Food_APP.Models
         [Required(ErrorMessage = "Wprowadź email")]
         [StringLength(40)]
         public string Email { get; set; }
-
         public string Uwagi { get; set; }
         public DateTime DataDowania { get; set; }
         public StanZamowienia StanZamówienia { get; set; }

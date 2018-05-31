@@ -1,11 +1,15 @@
-﻿using NVC_Food_APP.Logic;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using NVC_Food_APP.Logic;
 using NVC_Food_APP.Models;
 using NVC_Food_APP.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using static NVC_Food_APP.App_Start.IdentityConfig;
 
 namespace NVC_Food_APP.Controllers
 {
@@ -86,6 +90,66 @@ namespace NVC_Food_APP.Controllers
         //    };
         //    return Json(results);
         //}
+        public async Task<ActionResult> Zaplac()
+        {
+            var name = User.Identity.Name;
 
+            if (Request.IsAuthenticated)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+
+                var zamowienie = new Zamowienie
+                {
+                    Imie = user.DaneUzytkownika.Imie,
+                    Nazwisko = user.DaneUzytkownika.Nazwisko,
+                    Adres = user.DaneUzytkownika.Adres,
+                    Miasto = user.DaneUzytkownika.Miasto,
+                    KodPocztowy = user.DaneUzytkownika.KodPocztowy,
+                    Email = user.DaneUzytkownika.Email,
+                    Telefon = user.DaneUzytkownika.Telefon
+                };
+                return View(zamowienie);
+            }
+            else
+                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("Zaplac", "Koszyk") });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Zaplac(Zamowienie zamowienieSzczegoly)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+
+                var newOrder = KoszykLogic.UtworzZamowienie(zamowienieSzczegoly, userId);
+
+                var user = await UserManager.FindByIdAsync(userId);
+                TryUpdateModel(user.DaneUzytkownika);
+                await UserManager.UpdateAsync(user);
+
+                KoszykLogic.PustyKoszyk();
+
+                return RedirectToAction("Potwierdzenie");
+            }
+            else
+                return View(zamowienieSzczegoly);
+        }
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        public ActionResult Potwierdzenie()
+        {
+            var name = User.Identity.Name;
+            return View();
+        }
     }
 }

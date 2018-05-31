@@ -96,7 +96,7 @@ namespace NVC_Food_APP.Logic
         {
             var koszyk = PobierzKoszyk();
             Nowe.DataDowania = DateTime.Now;
-            //Nowe.UserId = userId;   //_____________________________________dodać migracje
+            Nowe.UserId = userId;
 
             db.Zamowienia.Add(Nowe);
 

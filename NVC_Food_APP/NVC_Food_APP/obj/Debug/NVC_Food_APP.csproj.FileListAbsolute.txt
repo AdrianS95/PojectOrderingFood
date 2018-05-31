@@ -249,3 +249,7 @@ E:\Pulpit\PojectOrderingFood-master\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food
 E:\Pulpit\PojectOrderingFood-master\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init3.resources
 E:\Pulpit\PojectOrderingFood-master\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init4.resources
 E:\Pulpit\PojectOrderingFood-master\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.gfgdgfg.resources
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init3.resources
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init4.resources
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.gfgdgfg.resources
+E:\Użytkownik\Dokumenty\GitHub\PojectOrderingFood\NVC_Food_APP\NVC_Food_APP\obj\Debug\NVC_Food_APP.Migrations.init5.resources
