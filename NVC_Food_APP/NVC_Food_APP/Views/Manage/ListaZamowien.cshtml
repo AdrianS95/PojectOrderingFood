@@ -60,7 +60,7 @@
                                                 <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly", "Jedzenie", new { id = pozycjaZamowienia.JedzenieId })">
                                                     <img class="kurs" src="@Url.Content("~/Content/Jedzenie/" + pozycjaZamowienia.jedzenie.PlikObrazek)" />
                                                     <h1>
-                                                        @pozycjaZamowienia.jedzenie.NazwaJedzenia - @pozycjaZamowienia.jedzenie.OpisJedzenia<br />
+                                                        @pozycjaZamowienia.jedzenie.NazwaJedzenia<br />
                                                         <strong>sztuk: @pozycjaZamowienia.Ilosc, łącznie: @(pozycjaZamowienia.Ilosc * @pozycjaZamowienia.CenaZakupu)  zł</strong>
                                                     </h1>
                                                 </a>

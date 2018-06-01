@@ -6,9 +6,11 @@ using System.Data.Entity;
 using NVC_Food_APP.Models;
 using NVC_Food_APP.Migrations;
 using System.Data.Entity.Migrations;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace NVC_Food_APP.Models.DaneTestowe
-{ 
+{
     public class JedzenieData : MigrateDatabaseToLatestVersion<JedzenieDbContext, Configuration>
     {
 
@@ -76,10 +78,43 @@ namespace NVC_Food_APP.Models.DaneTestowe
 
             };
 
+
+
+
             jedzenie.ForEach(k => context.Jedzenie.AddOrUpdate(k));
             context.SaveChanges();
 
 
+        }
+
+        public static void SeedUzytkownicy(JedzenieDbContext db)
+        {
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+
+            const string name = "adrian.smaza2@gmail.com";
+            const string password = "Qaz*963";
+            const string roleName = "Admin";
+
+            var user = userManager.FindByName(name);
+            if (user == null)
+            {
+                user = new ApplicationUser { UserName = name, Email = name, DaneUzytkownika = new DaneUzytkownika() };
+                var result = userManager.Create(user, password);
+            }
+
+            var role = roleManager.FindByName(roleName);
+            if (role == null)
+            {
+                role = new IdentityRole(roleName);
+                var roleresult = roleManager.Create(role);
+            }
+
+            var rolesForUser = userManager.GetRoles(user.Id);
+            if (!rolesForUser.Contains(role.Name))
+            {
+                var result = userManager.AddToRole(user.Id, role.Name);
+            }
         }
     }
 }

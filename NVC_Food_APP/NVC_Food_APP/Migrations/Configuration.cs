@@ -17,6 +17,7 @@ namespace NVC_Food_APP.Migrations
         protected override void Seed(NVC_Food_APP.Models.JedzenieDbContext context)
         {
             JedzenieData.SeedJedzenieData(context);
+            JedzenieData.SeedUzytkownicy(context);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

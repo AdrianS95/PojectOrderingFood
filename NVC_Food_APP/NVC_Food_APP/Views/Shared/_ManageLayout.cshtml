@@ -24,18 +24,7 @@
                 <a class="manageLink" href="@Url.Action("DodajJedzenie", "Manage")">
                     Dodaj
                 </a>
-                <a class="manageLink" href="@Url.Content("~/elmah")">
-                    Logi
-                </a>
-                <a class="manageLink" href="@Url.Content("~/hangfire")">
-                    Jobs
-                </a>
-
             }
-            @*<a id="koszykHeaderLink" href="@Url.Action("Index", "Koszyk")">
-                KOSZYK (<span id="koszyk-naglowek-ilosc-elementow">@Html.Action("PobierzIloscPozycjiKoszyka", "Koszyk")</span>)
-                <span id="cart-header-logo"></span>
-            </a>*@
             @Html.Partial("_Login")
         </div>
     </header>

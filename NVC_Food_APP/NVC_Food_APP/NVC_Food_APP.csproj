@@ -182,6 +182,10 @@
     <Compile Include="Controllers\JedzenieController.cs" />
     <Compile Include="Controllers\KoszykController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Migrations\201806011435432_Add admin.cs" />
+    <Compile Include="Migrations\201806011435432_Add admin.Designer.cs">
+      <DependentUpon>201806011435432_Add admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ManageCredentialsViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -354,6 +358,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806011435432_Add admin.resx">
+      <DependentUpon>201806011435432_Add admin.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
