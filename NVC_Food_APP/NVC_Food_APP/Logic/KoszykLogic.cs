@@ -109,7 +109,7 @@ namespace NVC_Food_APP.Logic
             {
                 var nowaPozycjaZamowienia = new PozycjaZamowienia()
                 {
-                    KursId = koszykElement.PozJedzenie.JedzenieID,
+                    JedzenieId = koszykElement.PozJedzenie.JedzenieID,
                     Ilosc = koszykElement.Ilosc,
                     CenaZakupu = koszykElement.Wartosc
                 };

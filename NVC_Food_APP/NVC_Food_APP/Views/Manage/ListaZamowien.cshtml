@@ -57,8 +57,8 @@
                                     {
                                         <li>
                                             <article>
-                                                <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly", "Kursy", new { id = pozycjaZamowienia.KursId })">
-                                                    <img class="kurs" src="@Url.Content("~/Content/Kursy/" + pozycjaZamowienia.jedzenie.PlikObrazek)" />
+                                                <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly", "Jedzenie", new { id = pozycjaZamowienia.JedzenieId })">
+                                                    <img class="kurs" src="@Url.Content("~/Content/Jedzenie/" + pozycjaZamowienia.jedzenie.PlikObrazek)" />
                                                     <h1>
                                                         @pozycjaZamowienia.jedzenie.NazwaJedzenia - @pozycjaZamowienia.jedzenie.OpisJedzenia<br />
                                                         <strong>sztuk: @pozycjaZamowienia.Ilosc, łącznie: @(pozycjaZamowienia.Ilosc * @pozycjaZamowienia.CenaZakupu)  zł</strong>
