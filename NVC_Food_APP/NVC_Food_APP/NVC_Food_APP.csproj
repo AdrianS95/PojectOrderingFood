@@ -182,6 +182,7 @@
     <Compile Include="Controllers\JedzenieController.cs" />
     <Compile Include="Controllers\KoszykController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="ViewModel\ManageCredentialsViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -365,9 +366,13 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Koszyk\Zaplac.cshtml" />
     <Content Include="Views\Koszyk\Potwierdzenie.cshtml" />
+    <Content Include="Views\Shared\_ManageLayout.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ListaZamowien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ManageController\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
