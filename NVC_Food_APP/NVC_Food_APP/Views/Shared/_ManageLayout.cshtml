@@ -20,11 +20,18 @@
                 Zamówienia
             </a>
             @if (@User.IsInRole("Admin"))
-            {
-                <a class="manageLink" href="@Url.Action("DodajJedzenie", "Manage")">
-                    Dodaj
-                </a>
-            }
+    {
+        <a class="manageLink" href="@Url.Action("DodajJedzenie", "Manage")">
+            Dodaj
+        </a>
+}
+            @if (@User.IsInRole("Admin"))
+    {
+        <a class="manageLink" href="@Url.Action("UpdateDataBaze", "Manage")">
+            Aktualizuj bazę
+        </a>
+}
+
             @Html.Partial("_Login")
         </div>
     </header>
