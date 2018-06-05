@@ -55,7 +55,7 @@ namespace NVC_Food_APP.Models.DaneTestowe
                         var nazwaJ = item.CssSelect(".meal-name").First().InnerText;
                         var opisJ = item.CssSelect(".meal-description-additional-info").First().InnerText;
                         var cenaJ = item.CssSelect(".meal-add-btn-wrapper").First().InnerText;
-                        jd.Add(new Jedzenie() { JedzenieID = pozycja, KategoriaID = 2, NazwaJedzenia = nazwaJ, OpisJedzenia = opisJ, Cena = 10, PlikObrazek = "Pizza.png", DataDodania = DateTime.Now, Widoczny = true, DanieDnia = false, });
+                        jd.Add(new Jedzenie() { JedzenieID = pozycja, KategoriaID = IDRestauracja, NazwaJedzenia = nazwaJ, OpisJedzenia = opisJ, Cena = 10, PlikObrazek = "Pizza.png", DataDodania = DateTime.Now, Widoczny = true, DanieDnia = false, });
                     }
                     jd.ForEach(k => context.Jedzenie.AddOrUpdate(k));
                     context.SaveChanges();
