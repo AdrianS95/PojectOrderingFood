@@ -23,46 +23,81 @@ namespace NVC_Food_APP.Models.DaneTestowe
 
             string[] ListaRestauracji = new string[]
             {
+                "",
                 "da-grasso-bielsko-biala",
-                //"pizzeria-michola","toskania-pizzapub", "toskania-pizzapub","pizzeria-jedynka","pizzeria-sorrento-bielsko-biala",
-                //"pizzeria-kalendarium","pizzeria-bellissima-bielsko-biala", "pizzeria-stodola","pizzeria-sorrento-bielsko-biala","pizzeria-stodola",
+                "pizzeria-michola",
+                "toskania-pizzapub",
+                "grillland",
+                "pizzeria-jedynka",
+                "pizzeria-sorrento-bielsko-biala",
+                "pizzeria-kalendarium",
+                "pizzeria-bellissima-bielsko-biala",
+                "pizzeria-stodola",
+                "strzecha",
+                "pizzeria-stodola",
+                "marwex-andrychow"
             };
             var kategorie = new List<Kategoria>();
 
-            for (int IDRestauracja = 0; IDRestauracja < ListaRestauracji.Length; IDRestauracja++)
+            for (int IDRestauracja = 1; IDRestauracja < ListaRestauracji.Length; IDRestauracja++)
             {
                 string url = "https://www.pyszne.pl/" + ListaRestauracji[IDRestauracja];
                 if (webGet.Load(url) is HtmlDocument doc)
                 {
                     var sektor = doc.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(1);
+
                     string nazwaRestauracji = doc.DocumentNode.CssSelect(".title-delivery").First().InnerText;
+
                     kategorie.Add(new Kategoria { KategoriaID = IDRestauracja, NazwaKategorii = nazwaRestauracji, NazwaPlikuIkony = "Pizza.png", Opiskategorii = "gastronomia" });
                 }
             }
             kategorie.ForEach(k => context.Kategorie.AddOrUpdate(k));
             context.SaveChanges();
 
-            for (int IDRestauracja = 0; IDRestauracja < ListaRestauracji.Length; IDRestauracja++)
+            var jd = new List<Jedzenie>();
+
+            for (int IDRestauracja = 1; IDRestauracja < ListaRestauracji.Length; IDRestauracja++)
             {
+
+
                 string url = "https://www.pyszne.pl/" + ListaRestauracji[IDRestauracja];
+
                 if (webGet.Load(url) is HtmlDocument document)
                 {
-                    var sektor = document.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(50);
+                    var sektor = document.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(30);
                     var nazwaRestauracji = document.DocumentNode.CssSelect(".title-delivery").CssSelect(".meal").ToArray();
-                    var jd = new List<Jedzenie>();
+                    //var sektor2 = document.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(1);
+
                     foreach (var item in sektor)
                     {
+
+
+
+                        string opisJ;
                         var nazwaJ = item.CssSelect(".meal-name").First().InnerText;
-                        var opisJ = item.CssSelect(".meal-description-additional-info").First().InnerText;
-                        var cenaJ = item.CssSelect(".meal-add-btn-wrapper").First().InnerText;
-                        jd.Add(new Jedzenie() { JedzenieID = pozycja, KategoriaID = IDRestauracja, NazwaJedzenia = nazwaJ, OpisJedzenia = opisJ, Cena = 10, PlikObrazek = "Pizza.png", DataDodania = DateTime.Now, Widoczny = true, DanieDnia = false, });
+                        var venaJ = item.CssSelect(".meal-add-btn-wrapper").First().InnerText;
+                        try
+                        {
+                            opisJ = item.CssSelect(".meal-description-additional-info").First().InnerText;
+                        }
+                        catch (Exception)
+                        {
+                            opisJ = "- brak opisu -";
+                        }
+
+                        string cenaJ = item.CssSelect(".meal-add-btn-wrapper").First().InnerText.Replace(" zł", "");
+                        decimal cenaDJ = Convert.ToDecimal(cenaJ);
+                        jd.Add(new Jedzenie() { JedzenieID = pozycja, KategoriaID = IDRestauracja, NazwaJedzenia = nazwaJ, OpisJedzenia = opisJ, Cena = cenaDJ, PlikObrazek = "Pizza.png", DataDodania = DateTime.Now, Widoczny = true, DanieDnia = false, });
                     }
-                    jd.ForEach(k => context.Jedzenie.AddOrUpdate(k));
-                    context.SaveChanges();
+
+                    //jd.ForEach(k => context.Jedzenie.AddOrUpdate(k));
+                    //context.SaveChanges();
                     pozycja++;
                 }
 
             }
+            jd.ForEach(k => context.Jedzenie.AddOrUpdate(k));
+            context.SaveChanges();
         }
 
 
