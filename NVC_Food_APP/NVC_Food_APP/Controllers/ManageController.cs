@@ -199,11 +199,8 @@ namespace NVC_Food_APP.Controllers
             return zamowienie.StanZamówienia;
         }
 
-        [Authorize(Roles = "Admin")]
-        public  ActionResult UpdateDataBaze()
-        {
 
-        }
+
 
 
 
