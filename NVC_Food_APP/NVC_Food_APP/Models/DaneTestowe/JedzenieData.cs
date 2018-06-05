@@ -16,11 +16,11 @@ namespace NVC_Food_APP.Models.DaneTestowe
     public class JedzenieData : MigrateDatabaseToLatestVersion<JedzenieDbContext, Configuration>
     {
 
+
         public static void SeedJedzenieData(JedzenieDbContext context)
         {
             int pozycja = 0;
             var webGet = new HtmlWeb();
-
             string[] ListaRestauracji = new string[]
             {
                 "",
@@ -66,7 +66,6 @@ namespace NVC_Food_APP.Models.DaneTestowe
                 {
                     var sektor = document.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(30);
                     var nazwaRestauracji = document.DocumentNode.CssSelect(".title-delivery").CssSelect(".meal").ToArray();
-                    //var sektor2 = document.DocumentNode.CssSelect(".menucard").CssSelect(".meal").ToArray().Take(1);
 
                     foreach (var item in sektor)
                     {

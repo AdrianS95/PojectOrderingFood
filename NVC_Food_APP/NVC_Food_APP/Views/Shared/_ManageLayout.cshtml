@@ -19,18 +19,8 @@
             <a class="manageLink" href="@Url.Action("ListaZamowien", "Manage")" style="width: 100px">
                 Zamówienia
             </a>
-            @if (@User.IsInRole("Admin"))
-    {
-        <a class="manageLink" href="@Url.Action("DodajJedzenie", "Manage")">
-            Dodaj
-        </a>
-}
-            @if (@User.IsInRole("Admin"))
-    {
-        <a class="manageLink" href="@Url.Action("UpdateDataBaze", "Manage")">
-            Aktualizuj bazę
-        </a>
-}
+
+
 
             @Html.Partial("_Login")
         </div>
@@ -50,9 +40,6 @@
             </ul>
         </nav>
         <div id="footerLogo">
-        </div>
-        <div id="footerCopyright">
-            Copyright &copy; 2016 P. Kursy
         </div>
     </footer>
     @RenderSection("Scripts", required: false)
